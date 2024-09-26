@@ -1,5 +1,5 @@
 import { useSetRecoilState } from 'recoil';
-import { Categories, IToDo, toDoState } from '../atom';
+import { Categories, IToDo, toDoState } from './atom';
 
 export default function ToDo({ text, category, id }: IToDo) {
   const setToDos = useSetRecoilState(toDoState);

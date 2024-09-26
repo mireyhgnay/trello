@@ -1,7 +1,7 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import CrateToDo from './CreateToDo';
 import ToDo from './ToDo';
-import { Categories, categoryState, toDoSelector } from '../atom';
+import { Categories, categoryState, toDoSelector } from './atom';
 
 export default function ToDoList() {
   const toDos = useRecoilValue(toDoSelector);
