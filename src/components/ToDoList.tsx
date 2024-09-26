@@ -11,7 +11,6 @@ export default function ToDoList() {
       <h1>To Dos</h1>
       <hr />
       <CrateToDo />
-
       <ul>
         {toDos.map((toDo) => (
           <ToDo key={toDo.id} {...toDo} />
