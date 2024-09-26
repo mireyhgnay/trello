@@ -1,3 +1,7 @@
+/**
+ * react-hook-form
+ * useForm Hook 을 사용하여 폼 유효성 검사하기
+ */
 import { useForm } from 'react-hook-form';
 
 interface IForm {
