@@ -25,7 +25,7 @@ export default function App() {
   const [toDos, setToDos] = useRecoilState(toDoState);
 
   const onDragEnd = (info: DropResult) => {
-    const { destination, draggableId, source } = info;
+    const { destination, source } = info;
 
     if (!destination) return;
 
@@ -33,8 +33,9 @@ export default function App() {
     if (destination?.droppableId === source.droppableId) {
       setToDos((allBoards) => {
         const boardCopy = [...allBoards[source.droppableId]]; // 선택한 아이템의 보드 전체 배열 복사 (Doing에 있는 요소를 선택했다면 Doing전체 배열을 복사한다.)
+        const taskObj = boardCopy[source.index];
         boardCopy.splice(source.index, 1); // 선택한 요소 제거
-        boardCopy.splice(destination?.index, 0, draggableId); // 옮긴 index에 선택한 요소 추가
+        boardCopy.splice(destination?.index, 0, taskObj); // 옮긴 index에 선택한 요소 추가
         return {
           ...allBoards,
           [source.droppableId]: boardCopy, // 변형한 배열을 반환
@@ -47,8 +48,9 @@ export default function App() {
       setToDos((allBoards) => {
         const sourceBoard = [...allBoards[source.droppableId]]; // 선택한 요소의 보드의 배열
         const destinationBoard = [...allBoards[destination.droppableId]]; // 옮겨 도착한 보드의 배열
+        const taskObj = sourceBoard[source.index];
         sourceBoard.splice(source.index, 1); // 기존 보드에서는 제거
-        destinationBoard.splice(destination?.index, 0, draggableId); // 옮긴 보드에는 요소 추가
+        destinationBoard.splice(destination?.index, 0, taskObj); // 옮긴 보드에는 요소 추가
         return {
           ...allBoards,
           [source.droppableId]: sourceBoard,
