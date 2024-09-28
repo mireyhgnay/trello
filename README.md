@@ -28,8 +28,8 @@ npm start
 
 <br />
 
-<img src="./docs/images/result_video.gif" alt="작업 결과 영상" width="400" />
+<img src="./docs/images/result_video.gif" alt="작업 결과 영상" width="700" />
 
-<img src="./docs/images/img.png" alt="작업 결과 이미지_1" width="400" />
+<img src="./docs/images/img.png" alt="작업 결과 이미지_1" width="700" />
 
-<img src="./docs/images/img2.png" alt="작업 결과 이미지_2" width="400" />
+<img src="./docs/images/img2.png" alt="작업 결과 이미지_2" width="700" />
